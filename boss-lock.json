@@ -1,0 +1,118 @@
+{
+	"hash": "d41d8cd98f00b204e9800998ecf8427e",
+	"updated": "2024-10-18T20:22:39.7144885-03:00",
+	"installedModules": {
+		"github.com/andre-djsystem/hashlib4pascal": {
+			"name": "hashlib4pascal",
+			"version": "1.0.0",
+			"hash": "8528036224699ab509c7d8f31d691ffb",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/dliocode/datalogger": {
+			"name": "datalogger",
+			"version": "2.1.10",
+			"hash": "35a56e925c2d3b4a7fedb218d8b35b17",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/dliocode/horse-datalogger": {
+			"name": "horse-datalogger",
+			"version": "0.0.3",
+			"hash": "f419a7c733717c2a5355dd98c6f87ec9",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/dliocode/horse-utils-clientip": {
+			"name": "horse-utils-clientip",
+			"version": "0.0.8",
+			"hash": "83125fa6038e2377749e27e23b8f3aee",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/gabrielbaltazar/gbjson": {
+			"name": "gbjson",
+			"version": "1.0.11",
+			"hash": "9f3f8d23501e9249638dd6a332a536c0",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/gabrielbaltazar/gbswagger": {
+			"name": "gbswagger",
+			"version": "3.0.7",
+			"hash": "0dfdc9b52765603ec81732f75513f384",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse": {
+			"name": "horse",
+			"version": "3.1.6",
+			"hash": "7fdacf6b762af6406e17d06e1c5fb0a1",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse-jwt": {
+			"name": "horse-jwt",
+			"version": "2.0.14",
+			"hash": "d7433d10c0fbc71649ee260ef70b8928",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse-octet-stream": {
+			"name": "horse-octet-stream",
+			"version": "1.9.11",
+			"hash": "b12c994839528b3499a2eecea67a5884",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/jhonson": {
+			"name": "jhonson",
+			"version": "1.1.9",
+			"hash": "ab9663f2e7c0ab2086e560c9c66ce092",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/paolo-rossi/delphi-jose-jwt": {
+			"name": "delphi-jose-jwt",
+			"version": "v3.3.1",
+			"hash": "30168430005de681e90bef999de6804a",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"https://github.com/danieleteti/delphiredisclient": {
+			"name": "delphiredisclient",
+			"version": "v2.2",
+			"hash": "d56fa90792fa7f255deac3872c2ef839",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"https://github.com/danieleteti/delphistompclient": {
+			"name": "delphistompclient",
+			"version": "master",
+			"hash": "cb6937b7758328924988f916cc4ddbbb",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"https://github.com/dliocode/sendemail": {
+			"name": "sendemail",
+			"version": "1.0.20",
+			"hash": "0200487cfa107c267d80ba5fe8222757",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		}
+	}
+}
