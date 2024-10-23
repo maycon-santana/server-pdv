@@ -14,16 +14,6 @@
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
-        <Base_Android>true</Base_Android>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
-        <Base_Android64>true</Base_Android64>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
         <Base_Win32>true</Base_Win32>
         <CfgParent>Base</CfgParent>
@@ -60,64 +50,7 @@
         <DCC_K>false</DCC_K>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <SanitizedProjectName>server</SanitizedProjectName>
-    <DCC_UnitSearchPath>modules\.dcp;..\modules\.dcp;modules\.dcu;..\modules\.dcu;$(DCC_UnitSearchPath);modules;..\modules;modules\datalogger\src\Core;..\modules\datalogger\src\Core;modules\datalogger\src\Providers;..\modules\datalogger\src\Providers;modules\delphi-jose-jwt\Source\Common;..\modules\delphi-jose-jwt\Source\Common;modules\delphi-jose-jwt\Source\JOSE;..\modules\delphi-jose-jwt\Source\JOSE;modules\delphi-jose-jwt\Source;..\modules\delphi-jose-jwt\Source;modules\delphiredisclient\samples\02JobQueue;..\modules\delphiredisclient\samples\02JobQueue;modules\delphiredisclient\samples\03PubSub;..\modules\delphiredisclient\samples\03PubSub;modules\delphiredisclient\samples\04Streams;..\modules\delphiredisclient\samples\04Streams;modules\delphiredisclient\samples\10CacheForClientServerSystems;..\modules\delphiredisclient\samples\10CacheForClientServerSystems;modules\delphiredisclient\samples\99FireMonkeySample;..\modules\delphiredisclient\samples\99FireMonkeySample;modules\delphiredisclient\samples\Commons;..\modules\delphiredisclient\samples\Commons;modules\delphiredisclient\sources;..\modules\delphiredisclient\sources;modules\delphiredisclient\tests;..\modules\delphiredisclient\tests;modules\delphistompclient;..\modules\delphistompclient;modules\delphistompclient\examples\Chat\ChatClient;..\modules\delphistompclient\examples\Chat\ChatClient;modules\delphistompclient\examples\Chat\ChatClientD2007;..\modules\delphistompclient\examples\Chat\ChatClientD2007;modules\delphistompclient\examples\Chat\ChatClientLazarus;..\modules\delphistompclient\examples\Chat\ChatClientLazarus;modules\delphistompclient\examples\Multiple;..\modules\delphistompclient\examples\Multiple;modules\delphistompclient\examples\QueueAck\Receiver;..\modules\delphistompclient\examples\QueueAck\Receiver;modules\delphistompclient\examples\QueueAck\SendMessage;..\modules\delphistompclient\examples\QueueAck\SendMessage;modules\delphistompclient\packages\lazarus;..\modules\delphistompclient\packages\lazarus;modules\delphistompclient\test;..\modules\delphistompclient\test;modules\delphistompclient\testLazarus;..\modules\delphistompclient\testLazarus;modules\delphistompclient\unittest;..\modules\delphistompclient\unittest;modules\gbjson\Source;..\modules\gbjson\Source;modules\gbswagger\Source\Core;..\modules\gbswagger\Source\Core;modules\gbswagger\Source\Datasnap;..\modules\gbswagger\Source\Datasnap;modules\gbswagger\Source\Horse;..\modules\gbswagger\Source\Horse;modules\gbswagger\Source\Validator;..\modules\gbswagger\Source\Validator;modules\hashlib4pascal\HashLib\src\Base;..\modules\hashlib4pascal\HashLib\src\Base;modules\hashlib4pascal\HashLib\src\Checksum;..\modules\hashlib4pascal\HashLib\src\Checksum;modules\hashlib4pascal\HashLib\src\Crypto\Blake2BParams;..\modules\hashlib4pascal\HashLib\src\Crypto\Blake2BParams;modules\hashlib4pascal\HashLib\src\Crypto\Blake2SParams;..\modules\hashlib4pascal\HashLib\src\Crypto\Blake2SParams;modules\hashlib4pascal\HashLib\src\Crypto;..\modules\hashlib4pascal\HashLib\src\Crypto;modules\hashlib4pascal\HashLib\src\Hash128;..\modules\hashlib4pascal\HashLib\src\Hash128;modules\hashlib4pascal\HashLib\src\Hash32;..\modules\hashlib4pascal\HashLib\src\Hash32;modules\hashlib4pascal\HashLib\src\Hash64;..\modules\hashlib4pascal\HashLib\src\Hash64;modules\hashlib4pascal\HashLib\src\Include;..\modules\hashlib4pascal\HashLib\src\Include;modules\hashlib4pascal\HashLib\src\Interfaces;..\modules\hashlib4pascal\HashLib\src\Interfaces;modules\hashlib4pascal\HashLib\src\Interfaces\IBlake2BParams;..\modules\hashlib4pascal\HashLib\src\Interfaces\IBlake2BParams;modules\hashlib4pascal\HashLib\src\Interfaces\IBlake2SParams;..\modules\hashlib4pascal\HashLib\src\Interfaces\IBlake2SParams;modules\hashlib4pascal\HashLib\src\KDF;..\modules\hashlib4pascal\HashLib\src\KDF;modules\hashlib4pascal\HashLib\src\NullDigest;..\modules\hashlib4pascal\HashLib\src\NullDigest;modules\hashlib4pascal\HashLib\src\Nullable;..\modules\hashlib4pascal\HashLib\src\Nullable;modules\hashlib4pascal\HashLib\src\Packages\FPC;..\modules\hashlib4pascal\HashLib\src\Packages\FPC;modules\hashlib4pascal\HashLib\src\Utils;..\modules\hashlib4pascal\HashLib\src\Utils;modules\hashlib4pascal\HashLib.Benchmark\src\Core;..\modules\hashlib4pascal\HashLib.Benchmark\src\Core;modules\hashlib4pascal\HashLib.Benchmark\src\Forms\FMX;..\modules\hashlib4pascal\HashLib.Benchmark\src\Forms\FMX;modules\hashlib4pascal\HashLib.Tests\src;..\modules\hashlib4pascal\HashLib.Tests\src;modules\horse\src;..\modules\horse\src;modules\horse-datalogger\src;..\modules\horse-datalogger\src;modules\horse-jwt\src;..\modules\horse-jwt\src;modules\horse-octet-stream\src;..\modules\horse-octet-stream\src;modules\horse-utils-clientip\src;..\modules\horse-utils-clientip\src;modules\jhonson\src;..\modules\jhonson\src;modules\sendemail\samples\Model 1;..\modules\sendemail\samples\Model 1;modules\sendemail\src;..\modules\sendemail\src</DCC_UnitSearchPath></PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Android)'!=''">
-        <Android_LauncherIcon36>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png</Android_LauncherIcon36>
-        <Android_LauncherIcon48>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png</Android_LauncherIcon48>
-        <Android_LauncherIcon72>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png</Android_LauncherIcon72>
-        <Android_LauncherIcon96>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png</Android_LauncherIcon96>
-        <Android_LauncherIcon144>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png</Android_LauncherIcon144>
-        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
-        <Android_SplashImage426>$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png</Android_SplashImage426>
-        <Android_SplashImage470>$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png</Android_SplashImage470>
-        <Android_SplashImage640>$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png</Android_SplashImage640>
-        <Android_SplashImage960>$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png</Android_SplashImage960>
-        <IncludeAndroid_AdaptiveIcon>true</IncludeAndroid_AdaptiveIcon>
-        <IncludeAndroid_VectorizedSplash>true</IncludeAndroid_VectorizedSplash>
-        <Android_AdaptiveIconMonochrome>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Monochrome.xml</Android_AdaptiveIconMonochrome>
-        <Android_AdaptiveIconForeground>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Foreground.xml</Android_AdaptiveIconForeground>
-        <Android_AdaptiveIconBackground>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Background.xml</Android_AdaptiveIconBackground>
-        <Android_VectorizedSplash>$(BDS)\bin\Artwork\Android\FM_VectorizedSplash.xml</Android_VectorizedSplash>
-        <Android_VectorizedSplashDark>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashDark.xml</Android_VectorizedSplashDark>
-        <Android_VectorizedSplashV31>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31.xml</Android_VectorizedSplashV31>
-        <Android_VectorizedSplashV31Dark>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31Dark.xml</Android_VectorizedSplashV31Dark>
-        <Android_NotificationIcon24>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png</Android_NotificationIcon24>
-        <Android_NotificationIcon36>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png</Android_NotificationIcon36>
-        <Android_NotificationIcon48>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png</Android_NotificationIcon48>
-        <Android_NotificationIcon72>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png</Android_NotificationIcon72>
-        <Android_NotificationIcon96>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png</Android_NotificationIcon96>
-        <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
-        <IncludeAndroid_VectorizedNotificationIcon>true</IncludeAndroid_VectorizedNotificationIcon>
-        <Android_VectorizedNotificationIcon>$(BDS)\bin\Artwork\Android\FM_VectorizedNotificationIcon.xml</Android_VectorizedNotificationIcon>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Android64)'!=''">
-        <Android_LauncherIcon36>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png</Android_LauncherIcon36>
-        <Android_LauncherIcon48>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png</Android_LauncherIcon48>
-        <Android_LauncherIcon72>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png</Android_LauncherIcon72>
-        <Android_LauncherIcon96>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png</Android_LauncherIcon96>
-        <Android_LauncherIcon144>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png</Android_LauncherIcon144>
-        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
-        <Android_SplashImage426>$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png</Android_SplashImage426>
-        <Android_SplashImage470>$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png</Android_SplashImage470>
-        <Android_SplashImage640>$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png</Android_SplashImage640>
-        <Android_SplashImage960>$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png</Android_SplashImage960>
-        <IncludeAndroid_AdaptiveIcon>true</IncludeAndroid_AdaptiveIcon>
-        <IncludeAndroid_VectorizedSplash>true</IncludeAndroid_VectorizedSplash>
-        <Android_AdaptiveIconMonochrome>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Monochrome.xml</Android_AdaptiveIconMonochrome>
-        <Android_AdaptiveIconForeground>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Foreground.xml</Android_AdaptiveIconForeground>
-        <Android_AdaptiveIconBackground>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Background.xml</Android_AdaptiveIconBackground>
-        <Android_VectorizedSplash>$(BDS)\bin\Artwork\Android\FM_VectorizedSplash.xml</Android_VectorizedSplash>
-        <Android_VectorizedSplashDark>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashDark.xml</Android_VectorizedSplashDark>
-        <Android_VectorizedSplashV31>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31.xml</Android_VectorizedSplashV31>
-        <Android_VectorizedSplashV31Dark>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31Dark.xml</Android_VectorizedSplashV31Dark>
-        <Android_NotificationIcon24>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png</Android_NotificationIcon24>
-        <Android_NotificationIcon36>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png</Android_NotificationIcon36>
-        <Android_NotificationIcon48>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png</Android_NotificationIcon48>
-        <Android_NotificationIcon72>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png</Android_NotificationIcon72>
-        <Android_NotificationIcon96>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png</Android_NotificationIcon96>
-        <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
-        <IncludeAndroid_VectorizedNotificationIcon>true</IncludeAndroid_VectorizedNotificationIcon>
-        <Android_VectorizedNotificationIcon>$(BDS)\bin\Artwork\Android\FM_VectorizedNotificationIcon.xml</Android_VectorizedNotificationIcon>
+        <DCC_UnitSearchPath>modules\.dcp;..\modules\.dcp;modules\.dcu;..\modules\.dcu;modules;..\modules;modules\datalogger\src\Core;..\modules\datalogger\src\Core;modules\datalogger\src\Providers;..\modules\datalogger\src\Providers;modules\delphi-jose-jwt\Source\Common;..\modules\delphi-jose-jwt\Source\Common;modules\delphi-jose-jwt\Source\JOSE;..\modules\delphi-jose-jwt\Source\JOSE;modules\delphi-jose-jwt\Source;..\modules\delphi-jose-jwt\Source;modules\delphiredisclient\samples\02JobQueue;..\modules\delphiredisclient\samples\02JobQueue;modules\delphiredisclient\samples\03PubSub;..\modules\delphiredisclient\samples\03PubSub;modules\delphiredisclient\samples\04Streams;..\modules\delphiredisclient\samples\04Streams;modules\delphiredisclient\samples\10CacheForClientServerSystems;..\modules\delphiredisclient\samples\10CacheForClientServerSystems;modules\delphiredisclient\samples\99FireMonkeySample;..\modules\delphiredisclient\samples\99FireMonkeySample;modules\delphiredisclient\samples\Commons;..\modules\delphiredisclient\samples\Commons;modules\delphiredisclient\sources;..\modules\delphiredisclient\sources;modules\delphiredisclient\tests;..\modules\delphiredisclient\tests;modules\delphistompclient;..\modules\delphistompclient;modules\delphistompclient\examples\Chat\ChatClient;..\modules\delphistompclient\examples\Chat\ChatClient;modules\delphistompclient\examples\Chat\ChatClientD2007;..\modules\delphistompclient\examples\Chat\ChatClientD2007;modules\delphistompclient\examples\Chat\ChatClientLazarus;..\modules\delphistompclient\examples\Chat\ChatClientLazarus;modules\delphistompclient\examples\Multiple;..\modules\delphistompclient\examples\Multiple;modules\delphistompclient\examples\QueueAck\Receiver;..\modules\delphistompclient\examples\QueueAck\Receiver;modules\delphistompclient\examples\QueueAck\SendMessage;..\modules\delphistompclient\examples\QueueAck\SendMessage;modules\delphistompclient\packages\lazarus;..\modules\delphistompclient\packages\lazarus;modules\delphistompclient\test;..\modules\delphistompclient\test;modules\delphistompclient\testLazarus;..\modules\delphistompclient\testLazarus;modules\delphistompclient\unittest;..\modules\delphistompclient\unittest;modules\gbjson\Source;..\modules\gbjson\Source;modules\gbswagger\Source\Core;..\modules\gbswagger\Source\Core;modules\gbswagger\Source\Datasnap;..\modules\gbswagger\Source\Datasnap;modules\gbswagger\Source\Horse;..\modules\gbswagger\Source\Horse;modules\gbswagger\Source\Validator;..\modules\gbswagger\Source\Validator;modules\hashlib4pascal\HashLib\src\Base;..\modules\hashlib4pascal\HashLib\src\Base;modules\hashlib4pascal\HashLib\src\Checksum;..\modules\hashlib4pascal\HashLib\src\Checksum;modules\hashlib4pascal\HashLib\src\Crypto\Blake2BParams;..\modules\hashlib4pascal\HashLib\src\Crypto\Blake2BParams;modules\hashlib4pascal\HashLib\src\Crypto\Blake2SParams;..\modules\hashlib4pascal\HashLib\src\Crypto\Blake2SParams;modules\hashlib4pascal\HashLib\src\Crypto;..\modules\hashlib4pascal\HashLib\src\Crypto;modules\hashlib4pascal\HashLib\src\Hash128;..\modules\hashlib4pascal\HashLib\src\Hash128;modules\hashlib4pascal\HashLib\src\Hash32;..\modules\hashlib4pascal\HashLib\src\Hash32;modules\hashlib4pascal\HashLib\src\Hash64;..\modules\hashlib4pascal\HashLib\src\Hash64;modules\hashlib4pascal\HashLib\src\Include;..\modules\hashlib4pascal\HashLib\src\Include;modules\hashlib4pascal\HashLib\src\Interfaces;..\modules\hashlib4pascal\HashLib\src\Interfaces;modules\hashlib4pascal\HashLib\src\Interfaces\IBlake2BParams;..\modules\hashlib4pascal\HashLib\src\Interfaces\IBlake2BParams;modules\hashlib4pascal\HashLib\src\Interfaces\IBlake2SParams;..\modules\hashlib4pascal\HashLib\src\Interfaces\IBlake2SParams;modules\hashlib4pascal\HashLib\src\KDF;..\modules\hashlib4pascal\HashLib\src\KDF;modules\hashlib4pascal\HashLib\src\NullDigest;..\modules\hashlib4pascal\HashLib\src\NullDigest;modules\hashlib4pascal\HashLib\src\Nullable;..\modules\hashlib4pascal\HashLib\src\Nullable;modules\hashlib4pascal\HashLib\src\Packages\FPC;..\modules\hashlib4pascal\HashLib\src\Packages\FPC;modules\hashlib4pascal\HashLib\src\Utils;..\modules\hashlib4pascal\HashLib\src\Utils;modules\hashlib4pascal\HashLib.Benchmark\src\Core;..\modules\hashlib4pascal\HashLib.Benchmark\src\Core;modules\hashlib4pascal\HashLib.Benchmark\src\Forms\FMX;..\modules\hashlib4pascal\HashLib.Benchmark\src\Forms\FMX;modules\hashlib4pascal\HashLib.Tests\src;..\modules\hashlib4pascal\HashLib.Tests\src;modules\horse\src;..\modules\horse\src;modules\horse-datalogger\src;..\modules\horse-datalogger\src;modules\horse-jwt\src;..\modules\horse-jwt\src;modules\horse-octet-stream\src;..\modules\horse-octet-stream\src;modules\horse-utils-clientip\src;..\modules\horse-utils-clientip\src;modules\jhonson\src;..\modules\jhonson\src;modules\sendemail\samples\Model 1;..\modules\sendemail\samples\Model 1;modules\sendemail\src;..\modules\sendemail\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>vclwinx;fmx;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;FireDACCommonODBC;FireDACCommonDriver;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;IndyIPClient;dbxcds;vcledge;bindcompvclwinx;FmxTeeUI;bindcompfmx;inetdb;FireDACSqliteDriver;DbxClientDriver;Tee;soapmidas;vclactnband;TeeUI;fmxFireDAC;dbexpress;DBXMySQLDriver;VclSmp;inet;vcltouch;fmxase;dbrtl;Skia.Package.FMX;fmxdae;TeeDB;FireDACMSAccDriver;CustomIPTransport;vcldsnap;DBXInterBaseDriver;IndySystem;Skia.Package.VCL;vcldb;vclFireDAC;bindcomp;FireDACCommon;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;FireDACADSDriver;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;adortl;vclimg;FireDACPgDriver;FireDAC;inetdbxpress;xmlrtl;tethering;bindcompvcl;dsnap;CloudService;fmxobj;bindcompvclsmp;FMXTee;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -147,6 +80,11 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
+        <DCC_ExeOutput>.\app</DCC_ExeOutput>
+        <DCC_DcuOutput>.\lib</DCC_DcuOutput>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>(None)</Manifest_File>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -158,6 +96,13 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="src\connections\server.connections.interfaces.pas"/>
+        <DCCReference Include="src\connections\impl\server.connections.impl.firedac.pas"/>
+        <DCCReference Include="src\entities\server.entities.empresa.pas"/>
+        <DCCReference Include="src\entities\server.entities.endereco.pas"/>
+        <DCCReference Include="src\entities\server.entities.emissorfiscal.pas"/>
+        <DCCReference Include="src\repository\service.repository.interfaces.pas"/>
+        <DCCReference Include="src\repository\impl\service.repository.impl.empresa.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -178,6 +123,10 @@
                 <Source>
                     <Source Name="MainSource">server.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
@@ -195,7 +144,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win32\Debug\server.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="app\server.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>server.exe</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -1153,8 +1102,6 @@
                 <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
-                <Platform value="Android">False</Platform>
-                <Platform value="Android64">False</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">False</Platform>
             </Platforms>
