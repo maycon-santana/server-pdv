@@ -1,4 +1,22 @@
--- api.cest definição
+-- api.autenticacoes definition
+
+-- Drop table
+
+-- DROP TABLE api.autenticacoes;
+
+CREATE TABLE api.autenticacoes (
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
+	empresa uuid NOT NULL,
+	cliente_id uuid NULL,
+	client_secret varchar(255) NOT NULL,
+	token_acesso varchar(255) NOT NULL,
+	data_geracao timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	data_expiracao timestamp NULL,
+	CONSTRAINT pk_autenticacoes PRIMARY KEY (id)
+);
+
+
+-- api.cest definition
 
 -- Drop table
 
@@ -12,7 +30,7 @@ CREATE TABLE api.cest (
 );
 
 
--- api.cfop definição
+-- api.cfop definition
 
 -- Drop table
 
@@ -25,7 +43,7 @@ CREATE TABLE api.cfop (
 );
 
 
--- api.cst definição
+-- api.cst definition
 
 -- Drop table
 
@@ -39,7 +57,7 @@ CREATE TABLE api.cst (
 );
 
 
--- api.cstcofins definição
+-- api.cstcofins definition
 
 -- Drop table
 
@@ -52,7 +70,7 @@ CREATE TABLE api.cstcofins (
 );
 
 
--- api.cstipi definição
+-- api.cstipi definition
 
 -- Drop table
 
@@ -65,7 +83,7 @@ CREATE TABLE api.cstipi (
 );
 
 
--- api.cstpis definição
+-- api.cstpis definition
 
 -- Drop table
 
@@ -78,14 +96,14 @@ CREATE TABLE api.cstpis (
 );
 
 
--- api.empresas definição
+-- api.empresas definition
 
 -- Drop table
 
 -- DROP TABLE api.empresas;
 
 CREATE TABLE api.empresas (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	nome varchar(255) NOT NULL,
 	cnpj varchar(18) NOT NULL,
 	telefone varchar(15) NULL,
@@ -104,7 +122,7 @@ CREATE TABLE api.empresas (
 );
 
 
--- api.ibpt definição
+-- api.ibpt definition
 
 -- Drop table
 
@@ -123,7 +141,7 @@ CREATE TABLE api.ibpt (
 );
 
 
--- api.origem definição
+-- api.origem definition
 
 -- Drop table
 
@@ -136,7 +154,7 @@ CREATE TABLE api.origem (
 );
 
 
--- api.uf definição
+-- api.uf definition
 
 -- Drop table
 
@@ -150,14 +168,14 @@ CREATE TABLE api.uf (
 );
 
 
--- api.caixa definição
+-- api.caixa definition
 
 -- Drop table
 
 -- DROP TABLE api.caixa;
 
 CREATE TABLE api.caixa (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	empresa_id uuid NULL,
 	nome varchar(100) NULL,
 	CONSTRAINT caixa_pkey PRIMARY KEY (id),
@@ -165,7 +183,7 @@ CREATE TABLE api.caixa (
 );
 
 
--- api.cidade definição
+-- api.cidade definition
 
 -- Drop table
 
@@ -180,14 +198,14 @@ CREATE TABLE api.cidade (
 );
 
 
--- api.emissores_fiscais definição
+-- api.emissores_fiscais definition
 
 -- Drop table
 
 -- DROP TABLE api.emissores_fiscais;
 
 CREATE TABLE api.emissores_fiscais (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	empresa uuid NOT NULL,
 	tipo_documento_fiscal varchar(10) NOT NULL,
 	ambiente_emissao varchar(15) NOT NULL,
@@ -202,14 +220,14 @@ CREATE TABLE api.emissores_fiscais (
 );
 
 
--- api.empresa_cnae definição
+-- api.empresa_cnae definition
 
 -- Drop table
 
 -- DROP TABLE api.empresa_cnae;
 
 CREATE TABLE api.empresa_cnae (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	empresa uuid NULL,
 	principal bpchar(1) NULL,
 	ramo_atividade varchar(50) NULL,
@@ -219,14 +237,14 @@ CREATE TABLE api.empresa_cnae (
 );
 
 
--- api.enderecos definição
+-- api.enderecos definition
 
 -- Drop table
 
 -- DROP TABLE api.enderecos;
 
 CREATE TABLE api.enderecos (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	empresa uuid NULL,
 	logradouro varchar(255) NOT NULL,
 	numero varchar(10) NULL,
@@ -242,14 +260,14 @@ CREATE TABLE api.enderecos (
 );
 
 
--- api.marcas definição
+-- api.marcas definition
 
 -- Drop table
 
 -- DROP TABLE api.marcas;
 
 CREATE TABLE api.marcas (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	empresa uuid NULL,
 	nome varchar(50) NULL,
 	descricao varchar(100) NULL,
@@ -258,14 +276,14 @@ CREATE TABLE api.marcas (
 );
 
 
--- api.turno definição
+-- api.turno definition
 
 -- Drop table
 
 -- DROP TABLE api.turno;
 
 CREATE TABLE api.turno (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	empresa_id uuid NULL,
 	nome varchar(100) NULL,
 	CONSTRAINT turno_pkey PRIMARY KEY (id),
@@ -273,14 +291,14 @@ CREATE TABLE api.turno (
 );
 
 
--- api.unidades definição
+-- api.unidades definition
 
 -- Drop table
 
 -- DROP TABLE api.unidades;
 
 CREATE TABLE api.unidades (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	empresa uuid NULL,
 	sigla varchar(10) NULL,
 	descricao varchar(100) NULL,
@@ -289,14 +307,14 @@ CREATE TABLE api.unidades (
 );
 
 
--- api.usuarios definição
+-- api.usuarios definition
 
 -- Drop table
 
 -- DROP TABLE api.usuarios;
 
 CREATE TABLE api.usuarios (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	nome varchar(255) NOT NULL,
 	email varchar(255) NOT NULL,
 	senha varchar(255) NOT NULL,
@@ -310,14 +328,14 @@ CREATE TABLE api.usuarios (
 );
 
 
--- api.auditoria definição
+-- api.auditoria definition
 
 -- Drop table
 
 -- DROP TABLE api.auditoria;
 
 CREATE TABLE api.auditoria (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	acao varchar(255) NOT NULL,
 	usuario_id uuid NULL,
 	data_acao timestamp DEFAULT CURRENT_TIMESTAMP NULL,
@@ -327,14 +345,14 @@ CREATE TABLE api.auditoria (
 );
 
 
--- api.caixa_movimento definição
+-- api.caixa_movimento definition
 
 -- Drop table
 
 -- DROP TABLE api.caixa_movimento;
 
 CREATE TABLE api.caixa_movimento (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	operador uuid NULL,
 	empresa_id uuid NULL,
 	caixa uuid NULL,
@@ -350,14 +368,14 @@ CREATE TABLE api.caixa_movimento (
 );
 
 
--- api.clientes definição
+-- api.clientes definition
 
 -- Drop table
 
 -- DROP TABLE api.clientes;
 
 CREATE TABLE api.clientes (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	nome varchar(255) NOT NULL,
 	cpf_cnpj varchar(18) NOT NULL,
 	telefone varchar(15) NULL,
@@ -378,14 +396,14 @@ CREATE TABLE api.clientes (
 );
 
 
--- api.notas_fiscais definição
+-- api.notas_fiscais definition
 
 -- Drop table
 
 -- DROP TABLE api.notas_fiscais;
 
 CREATE TABLE api.notas_fiscais (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	serie int4 NOT NULL,
 	numero int4 NOT NULL,
 	usuario uuid NULL,
@@ -437,14 +455,14 @@ CREATE TABLE api.notas_fiscais (
 );
 
 
--- api.produtos definição
+-- api.produtos definition
 
 -- Drop table
 
 -- DROP TABLE api.produtos;
 
 CREATE TABLE api.produtos (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	empresa uuid NULL,
 	unidade uuid NULL,
 	marca uuid NULL,
@@ -481,14 +499,14 @@ CREATE TABLE api.produtos (
 );
 
 
--- api.venda_itens definição
+-- api.venda_itens definition
 
 -- Drop table
 
 -- DROP TABLE api.venda_itens;
 
 CREATE TABLE api.venda_itens (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	produto uuid NULL,
 	venda uuid NULL,
 	quantidade numeric(18, 6) NULL,
@@ -507,14 +525,14 @@ CREATE TABLE api.venda_itens (
 );
 
 
--- api.vendas definição
+-- api.vendas definition
 
 -- Drop table
 
 -- DROP TABLE api.vendas;
 
 CREATE TABLE api.vendas (
-	id uuid DEFAULT api.uuid_generate_v4() NOT NULL,
+	id uuid DEFAULT uuid_generate_v4() NOT NULL,
 	cliente_id uuid NULL,
 	usuario_id uuid NULL,
 	empresa_id uuid NULL,
@@ -543,7 +561,7 @@ CREATE TABLE api.vendas (
 );
 
 
--- api.notas_fiscais_itens definição
+-- api.notas_fiscais_itens definition
 
 -- Drop table
 
