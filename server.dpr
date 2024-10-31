@@ -54,7 +54,9 @@ uses
   models.emissoresfiscais in 'src\models\models.emissoresfiscais.pas',
   contracts.repository.base in 'src\contracts\contracts.repository.base.pas',
   contracts.router.horse in 'src\contracts\contracts.router.horse.pas',
-  server.entity.base in 'src\contracts\server.entity.base.pas';
+  server.entity.base in 'src\contracts\server.entity.base.pas',
+  models.autenticacoes in 'src\models\models.autenticacoes.pas',
+  models.factory in 'src\models\models.factory.pas';
 
 begin
   {$IFDEF DEBUG}

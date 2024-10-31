@@ -142,6 +142,8 @@
         <DCCReference Include="src\contracts\contracts.repository.base.pas"/>
         <DCCReference Include="src\contracts\contracts.router.horse.pas"/>
         <DCCReference Include="src\contracts\server.entity.base.pas"/>
+        <DCCReference Include="src\models\models.autenticacoes.pas"/>
+        <DCCReference Include="src\models\models.factory.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
