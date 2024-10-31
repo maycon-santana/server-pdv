@@ -1,4 +1,4 @@
-unit server.entities.emissorfiscal;
+unit server.entity.emissorfiscal;
 
 interface
 

@@ -25,27 +25,27 @@ uses
   Data.DB,
   FireDAC.Comp.DataSet,
   FireDAC.Comp.Client,
-  server.connections.interfaces;
+  contracts.connections.interfaces;
 
   type
-    TDataBaseConnection = class(TInterfacedObject, IDataBaseConnection)
-    private
-      FConn : TFDConnection;
-      FQuery: TFDQuery;
+  TDataBaseConnection = class(TInterfacedObject, IDataBaseConnection)
+  private
+    FConn: TFDConnection;
 
-      procedure PreencherQuery(Value: String);
-      procedure PreencherParams(Value: Array of Variant);
+    constructor Create;
+    destructor Destroy; override;
+  protected
+    function PrepareQuery(const SQL: String; const Params: TArray<TParams>): TFDQuery;
+    function Persistir(Value: String): Boolean;
+  public
 
-      constructor Create;
-      destructor Destroy; override;
-    public
-      class function New: IDataBaseConnection;
+    class function New: IDataBaseConnection;
 
-      procedure StartTransaction;
-      procedure Commit;
-      procedure Rollback;
-      procedure Query(const Statement: String; const Prams: Array of Variant; var DataSource: TDataSource);
-    end;
+    procedure StartTransaction;
+    procedure Commit;
+    procedure Rollback;
+    function Query(const Statement: String; const Params: TArray<TParams> = []): TDataSet; overload;
+  end;
 
 implementation
 
@@ -54,7 +54,6 @@ implementation
 procedure TDataBaseConnection.Commit;
 begin
   FConn.Commit;
-  
 end;
 
 constructor TDataBaseConnection.Create;
@@ -72,12 +71,9 @@ begin
   FConn.Params.Add('Server='+lServer);
   FConn.Params.UserName := lUserName;
   FConn.Params.Password := lPassword;
-  FConn.Params.Add('Port='+lPort);
-  FConn.Params.Add('CharacterSet=uf8t');
+  FConn.Params.Add('PORT='+lPort);
+  FConn.Params.Add('CharacterSet=utf8');
   FConn.Connected;
-
-  FQuery := TFDQuery.Create(nil);
-  FQuery.Connection := FConn;
 end;
 
 destructor TDataBaseConnection.Destroy;
@@ -88,52 +84,66 @@ end;
 
 class function TDataBaseConnection.New: IDataBaseConnection;
 begin
-  Result := Self.Create;
+  REsult := Self.Create;
 end;
 
-procedure TDataBaseConnection.PreencherParams(Value: array of Variant);
+function TDataBaseConnection.Persistir(Value: String): Boolean;
 begin
-  for var I := Low(Value) to High(Value) do
-  begin  
-    FQuery.Params.Add;
-    FQuery.Params[I].Value := Value[I];
+  Result := not (not (Pos('UPDATE', UpperCase(Value)) > 0)) or
+    (not (Pos('INSERT', UpperCase(Value)) > 0));
+end;
+
+function TDataBaseConnection.PrepareQuery(const SQL: String;
+  const Params: TArray<TParams>): TFDQuery;
+begin
+  Result := TFDQuery.Create(nil);
+  try
+    Result.Connection := FConn;
+    Result.SQL.Text := SQL;
+    if Length(Params) > 0 then
+    begin
+      for var I := Low(Params) to High(Params) do
+      begin
+        for var J := Low(0) to Pred(Params[I].Count) do
+        begin
+          Result.ParamByName(Params[I].Items[J].Name).DataType := Params[I].Items[J].DataType;
+          Result.ParamByName(Params[I].Items[J].Name).ParamType := Params[I].Items[J].ParamType;
+          Result.ParamByName(Params[I].Items[J].Name).Values[I] := Params[I].Items[J].Value;
+        end;
+      end;
+      Result.Prepare;
+    end;
+  except on E: Exception do
+    begin
+      FreeAndNil(Result);
+      raise;
+    end;
   end;
 end;
 
-procedure TDataBaseConnection.PreencherQuery(Value: String);
+function TDataBaseConnection.Query(const Statement: String;
+  const Params: TArray<TParams>): TDataSet;
 begin
-    if not FConn.Connected then
-     FConn.Connected := True;
-
-   FQuery.Close;
-   FQuery.SQL.Clear;
-   FQuery.SQL.Add(Value);
-end;
-
-procedure TDataBaseConnection.Query(const Statement: String;
-  const Prams: array of Variant; var DataSource: TDataSource);
-begin
-   PreencherQuery(Statement);
-   PreencherParams(Prams);
-
-   if (not (Pos('UPDATE', UpperCase(Statement)) > 0)) or 
-    (not (Pos('INSERT', UpperCase(Statement)) > 0)) then
-   begin
-     FQuery.Open;
-     DataSource.DataSet := FQuery;
-     Exit;
-   end;
-   FQuery.ExecSQL;
+  Result := nil;
+  var LQuery := PrepareQuery(Statement, Params);
+  if not Persistir(Statement) then
+  begin
+    LQuery.Open;
+    Result := LQuery;
+    Exit;
+  end;
+  LQuery.ExecSQL;
+  Result := LQuery;
 end;
 
 procedure TDataBaseConnection.Rollback;
 begin
-   FConn.Rollback;
+  FConn.Rollback;
 end;
 
 procedure TDataBaseConnection.StartTransaction;
 begin
-   FConn.StartTransaction;
+  FConn.StartTransaction;
 end;
 
 end.

@@ -1,4 +1,4 @@
-unit server.entities.endereco;
+unit server.entity.endereco;
 
 interface
 

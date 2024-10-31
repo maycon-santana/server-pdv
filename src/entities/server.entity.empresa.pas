@@ -1,10 +1,10 @@
-unit server.entities.empresa;
+unit server.entity.empresa;
 
 interface
 
 uses
-  server.entities.endereco,
-  server.entities.emissorfiscal;
+  server.entity.endereco,
+  server.entity.emissorfiscal;
 
 type
   TEmpresa = class

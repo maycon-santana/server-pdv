@@ -8,9 +8,9 @@ uses
   System.Generics.Collections,
   Data.DB,
   service.repository.interfaces,
-  server.entities.empresa,
-  server.entities.emissorfiscal,
-  server.entities.endereco,
+  server.entity.empresa,
+  server.entity.emissorfiscal,
+  server.entity.endereco,
   server.connections.interfaces;
 
 type
