@@ -96,14 +96,7 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="src\connections\server.connections.interfaces.pas"/>
-        <DCCReference Include="src\connections\impl\server.connections.impl.firedac.pas"/>
-        <DCCReference Include="src\entities\server.entity.empresa.pas"/>
-        <DCCReference Include="src\entities\server.entity.endereco.pas"/>
-        <DCCReference Include="src\entities\server.entity.emissorfiscal.pas"/>
-        <DCCReference Include="src\repository\service.repository.interfaces.pas"/>
-        <DCCReference Include="src\repository\impl\service.repository.impl.empresa.pas"/>
-        <DCCReference Include="src\entities\server.entity.auditoria.pas"/>
+        <DCCReference Include="src\entities\entity.endereco.pas"/>
         <DCCReference Include="src\contracts\contracts.connections.interfaces.pas"/>
         <DCCReference Include="src\contracts\contracts.entity.auditoria.pas"/>
         <DCCReference Include="src\contracts\contracts.entity.autenticacoes.pas"/>
@@ -144,6 +137,41 @@
         <DCCReference Include="src\contracts\server.entity.base.pas"/>
         <DCCReference Include="src\models\models.autenticacoes.pas"/>
         <DCCReference Include="src\models\models.factory.pas"/>
+        <DCCReference Include="src\entities\entity.autenticacoes.pas"/>
+        <DCCReference Include="src\entities\entity.caixa.pas"/>
+        <DCCReference Include="src\entities\entity.caixamovimento.pas"/>
+        <DCCReference Include="src\entities\entity.cest.pas"/>
+        <DCCReference Include="src\entities\entity.cfop.pas"/>
+        <DCCReference Include="src\entities\entity.cidade.pas"/>
+        <DCCReference Include="src\entities\entity.uf.pas"/>
+        <DCCReference Include="src\entities\entity.clientes.pas"/>
+        <DCCReference Include="src\entities\entity.cst.pas"/>
+        <DCCReference Include="src\entities\entity.cstcofins.pas"/>
+        <DCCReference Include="src\entities\entity.cstipi.pas"/>
+        <DCCReference Include="src\entities\entity.cstpis.pas"/>
+        <DCCReference Include="src\entities\entity.emissoresfiscais.pas"/>
+        <DCCReference Include="src\entities\entity.empresa.pas"/>
+        <DCCReference Include="src\entities\entity.empresacnae.pas"/>
+        <DCCReference Include="src\entities\entity.ibpt.pas"/>
+        <DCCReference Include="src\entities\entity.factory.pas"/>
+        <DCCReference Include="src\entities\entity.marcas.pas"/>
+        <DCCReference Include="src\entities\entity.notasfiscais.pas"/>
+        <DCCReference Include="src\entities\entity.notasfiscaisitens.pas"/>
+        <DCCReference Include="src\entities\entity.origem.pas"/>
+        <DCCReference Include="src\entities\entity.produtos.pas"/>
+        <DCCReference Include="src\entities\entity.turno.pas"/>
+        <DCCReference Include="src\entities\entity.unidades.pas"/>
+        <DCCReference Include="src\entities\entity.usuarios.pas"/>
+        <DCCReference Include="src\entities\entity.vendaitens.pas"/>
+        <DCCReference Include="src\entities\entity.vendas.pas"/>
+        <DCCReference Include="src\entities\entity.auditoria.pas"/>
+        <DCCReference Include="src\error\error.httperro.pas"/>
+        <DCCReference Include="src\helpers\helpers.serializacao.pas"/>
+        <DCCReference Include="src\helpers\helpers.utils.pas"/>
+        <DCCReference Include="src\repository\repository.autenticacoes.pas"/>
+        <DCCReference Include="src\repository\repository.empresa.pas"/>
+        <DCCReference Include="src\routers\router.horse.empresa.pas"/>
+        <DCCReference Include="src\connections\connections.firedac.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -1146,6 +1174,7 @@
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">False</Platform>
             </Platforms>
+            <ModelSupport>False</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

@@ -1,4 +1,4 @@
-unit server.connections.impl.firedac;
+unit connections.firedac;
 
 interface
 
@@ -11,7 +11,7 @@ uses
   FireDAC.Stan.Error,
   FireDAC.UI.Intf,
   FireDAC.Phys.Intf,
-  FireDAC.Stan.def,
+  FireDAC.Stan.Def,
   FireDAC.Stan.Pool,
   FireDAC.Stan.Async,
   FireDAC.Phys,
@@ -27,7 +27,7 @@ uses
   FireDAC.Comp.Client,
   contracts.connections.interfaces;
 
-  type
+type
   TDataBaseConnection = class(TInterfacedObject, IDataBaseConnection)
   private
     FConn: TFDConnection;
@@ -147,3 +147,4 @@ begin
 end;
 
 end.
+

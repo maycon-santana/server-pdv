@@ -23,9 +23,9 @@ type
     function CaixaMovimento: ICaixaMovimento;
     function Empresa: IEmpresa;
     function Marcas: IMarcas;
-    function Notasfiscais: INotasFiscais;
+    function NotasFiscais: INotasFiscais;
     function Vendas: IVendas;
-    function Unidades: IUNidades;
+    function Unidades: IUnidades;
     function Produtos: IProdutos;
     function Turno: ITurno;
     function Usuarios: IUsuarios;

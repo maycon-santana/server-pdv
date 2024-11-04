@@ -1,4 +1,5 @@
-unit server.entity.auditoria;
+
+unit entity.auditoria;
 
 interface
 
@@ -80,3 +81,4 @@ begin
 end;
 
 end.
+
